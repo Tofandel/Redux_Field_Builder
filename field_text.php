@@ -1,9 +1,4 @@
 <?php
-/**
- * Copyright (c) Adrien Foulon - 2018.
- * Licensed under the Apache License, Version 2.0
- * http://www.apache.org/licenses/LICENSE-2.0
- */
 
 // Exit if accessed directly
 if (!defined('ABSPATH')) {

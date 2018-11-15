@@ -44,10 +44,12 @@ class Redux_Field_Descriptor_Fields implements ArrayAccess {
 	public function setOrder( $order ) {
 		static::$order = $order;
 		$this->options[ 'order' ] = (float) $order;
+		return $this;
 	}
 
 	public function setGroup( $group ) {
 		$this->options[ 'group' ] = $group;
+		return $this;
 	}
 
 	/**

@@ -11,6 +11,8 @@ abstract class Redux_Descriptor_Types {
 	const BOOL = 'bool';
 	const SLIDER = 'slider';
 	const ARRAY = 'array';
+	const WP_DATA = 'wp_data';
+	//Todo add more field types for the builder
 
 	public static function getTypes() {
 		static $constCache;
@@ -28,7 +30,6 @@ abstract class Redux_Descriptor_Types {
 		return in_array( $value, self::getTypes(), $strict );
 	}
 
-	//Todo add more field types for the builder
 }
 
 class_alias('Redux_Descriptor_Types', 'RDT');

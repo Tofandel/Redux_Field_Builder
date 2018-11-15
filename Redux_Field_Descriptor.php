@@ -30,6 +30,10 @@ class Redux_Field_Descriptor {
 		$this->icon        = $icon;
 	}
 
+	public function getName() {
+		return $this->name;
+	}
+
 	/**
 	 * @param        $name
 	 * @param        $title
@@ -44,6 +48,16 @@ class Redux_Field_Descriptor {
 		$this->currentField    = $name;
 
 		return $this->fields[ $name ];
+	}
+
+	public function parseRequest($req) {
+		$parsed_req = array();
+		foreach ($req as $k => $v) {
+			if (isset($this->fields[$k])) {
+				$parsed_req[$k] = $v;
+			}
+		}
+		return $parsed_req;
 	}
 
 	/**

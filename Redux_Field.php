@@ -21,6 +21,15 @@ abstract class Redux_Field {
 		static::$descriptor->addField('output', __('CSS Output'), RDT::BOOL, '', false);
 	}
 
+	public static function getDescriptor() {
+		if (!isset(static::$descriptor)) {
+			static::makeBaseDescriptor();
+			//This part is out of opt name because it's non vendor dependant
+			static::$descriptor = apply_filters('redux/field/'.static::$descriptor->getName().'/descriptor', static::$descriptor);
+		}
+		return static::$descriptor;
+	}
+
 	abstract public static function makeDescriptor();
 
 	abstract public function render();

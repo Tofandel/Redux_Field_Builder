@@ -23,7 +23,7 @@ abstract class Redux_Field {
 
 	public static function getDescriptor() {
 		if (!isset(static::$descriptor)) {
-			static::makeBaseDescriptor();
+			static::makeDescriptor();
 			//This part is out of opt name because it's non vendor dependant
 			static::$descriptor = apply_filters('redux/field/'.static::$descriptor->getName().'/descriptor', static::$descriptor);
 		}

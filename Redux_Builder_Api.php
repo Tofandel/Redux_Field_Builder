@@ -21,7 +21,7 @@ class Redux_Builder_Api extends Redux_Class {
 
 	public function __construct( $parent = null ) {
 		parent::__construct( $parent );
-
+		$this->rest_api_init();
 	}
 
 	public function rest_api_init() {
